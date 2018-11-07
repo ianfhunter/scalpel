@@ -1,9 +1,12 @@
 import os
 import torch
-import cPickle as pickle
 import numpy
 import torchvision.transforms as transforms
-
+try:
+    import cPickle as pickle
+except ImportError:
+    import pickle
+    
 class dataset():
     def __init__(self, root=None, train=True):
         self.root = root
